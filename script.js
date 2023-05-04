@@ -1,5 +1,6 @@
 import { cpus as _cpus } from 'os';
 import mailgun from "mailgun-js";
+require('dotenv').config()
 
 // processor load calculator
 const processorLoad = () => {
