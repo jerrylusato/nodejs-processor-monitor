@@ -29,8 +29,8 @@ setInterval(() => {
     if (load > 70) { // check processor load
         // send email notification & log if load is not optimal
         mailgunClient.messages().send({
-            from: "Server <jeremiahlst@gmail.com>",
-            to: "jeremiahlusato@gmail.com",
+            from: "Server Processor <do_not_reply@mailgun.org>",
+            to: "email_address_of_the_notification_recipient",
             subject: "Processor load",
             text: "Server processor load is not optimal now!"
         }, error => {
