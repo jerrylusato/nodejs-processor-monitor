@@ -18,7 +18,7 @@ const processorLoad = () => {
 };
 
 // email server setup
-const mg = mailgun({
+const mailgunClient = mailgun({
     apiKey: process.env.MAILGUN_API_KEY,
     domain: MAILGUN_DOMAIN
 });
@@ -27,7 +27,7 @@ setInterval(() => {
     const load = processorLoad();
     if (load > 70) { // check processor load
         // send email notification & log if load is not optimal
-        mg.messages().send({
+        mailgunClient.messages().send({
             from: "Server <jeremiahlst@gmail.com>",
             to: "jeremiahlusato@gmail.com",
             subject: "Processor load",
