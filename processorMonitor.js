@@ -21,7 +21,7 @@ const processorLoad = () => {
 // email server setup
 const mailgunClient = mailgun({
     apiKey: process.env.MAILGUN_API_KEY,
-    domain: MAILGUN_DOMAIN
+    domain: process.env.MAILGUN_DOMAIN
 });
 
 setInterval(() => {
